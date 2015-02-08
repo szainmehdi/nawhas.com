@@ -1,0 +1,8 @@
+{
+  "name": "Nawhas.com",
+  "dependencies": {
+    "bootstrap": "~3",
+    "jquery": "~2",
+    "fontawesome": "~4.3.0"
+  }
+}
