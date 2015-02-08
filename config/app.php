@@ -136,6 +136,13 @@ return [
 		'Illuminate\Validation\ValidationServiceProvider',
 		'Illuminate\View\ViewServiceProvider',
 
+
+		/**
+		 * Package Service Providers
+		 */
+		'Illuminate\Html\HtmlServiceProvider',
+		'Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider',
+
 		/*
 		 * Application Service Providers...
 		 */
@@ -193,6 +200,11 @@ return [
 		'Validator' => 'Illuminate\Support\Facades\Validator',
 		'View'      => 'Illuminate\Support\Facades\View',
 
+		/**
+		 * Package Facades
+		 */
+		'Form'		=> 'Illuminate\Html\FormFacade',
+		'HTML'		=> 'Illuminate\Html\HtmlFacade'
 	],
 
 ];
