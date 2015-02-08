@@ -3,10 +3,10 @@
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-use App\Models\Artist;
+use App\Models\Album;
 use Illuminate\Http\Request;
 
-class ArtistsController extends Controller {
+class AlbumsController extends Controller {
 
 	/**
 	 * Display a listing of the resource.
@@ -15,7 +15,7 @@ class ArtistsController extends Controller {
 	 */
 	public function index()
 	{
-		return view('artists.index');
+		return view('albums.index');
 	}
 
 	/**
@@ -25,7 +25,7 @@ class ArtistsController extends Controller {
 	 */
 	public function create()
 	{
-		return view('artists.create');
+		return view('albums.create');
 	}
 
 	/**
@@ -42,42 +42,46 @@ class ArtistsController extends Controller {
 	 * Display the specified resource.
 	 *
 	 * @param  Artist $artist
+	 * @param  Album $album
 	 * @return Response
 	 */
-	public function show(Artist $artist)
+	public function show(Artist $artist, Album $album)
 	{
-		return view('artists.show');
+		return view('albums.show');
 	}
 
 	/**
 	 * Show the form for editing the specified resource.
 	 *
 	 * @param  Artist $artist
+	 * @param  Album $album
 	 * @return Response
 	 */
-	public function edit(Artist $artist)
+	public function edit(Artist $artist, Album $album)
 	{
-		return view('artists.edit');
+		return view('albums.edit');
 	}
 
 	/**
 	 * Update the specified resource in storage.
 	 *
 	 * @param  Artist $artist
+	 * @param  Album $album
 	 * @return Response
 	 */
-	public function update(Artist $artist)
+	public function update(Artist $artist, Album $album)
 	{
-
+		//
 	}
 
 	/**
 	 * Remove the specified resource from storage.
 	 *
 	 * @param  Artist $artist
+	 * @param  Album $album
 	 * @return Response
 	 */
-	public function destroy(Artist $artist)
+	public function destroy(Artist $artist, Album $album)
 	{
 		//
 	}

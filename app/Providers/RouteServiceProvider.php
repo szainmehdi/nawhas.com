@@ -1,5 +1,9 @@
 <?php namespace App\Providers;
 
+use App\Models\Album;
+use App\Models\Artist;
+use App\Models\Track;
+use App\Models\User;
 use Illuminate\Routing\Router;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 
@@ -24,7 +28,12 @@ class RouteServiceProvider extends ServiceProvider {
 	{
 		parent::boot($router);
 
-		//
+		$router->bind('nawhakhan', $this->resolveModelBySlug(Artist::class));
+		$router->bind('artist', $this->resolveModelBySlug(Artist::class));
+		$router->bind('user', $this->resolveModelBySlug(User::class));
+		$router->bind('nawha', $this->resolveModelBySlug(Track::class));
+		$router->bind('track', $this->resolveModelBySlug(Track::class));
+		$router->bind('album', $this->resolveModelBySlug(Album::class));
 	}
 
 	/**
@@ -40,5 +49,20 @@ class RouteServiceProvider extends ServiceProvider {
 			require app_path('Http/routes.php');
 		});
 	}
+
+
+	public function resolveModelBySlug($class)
+	{
+		return function($value) use ($class) {
+			$model =  $class::where('slug', $value)->first();
+
+			if(is_null($model)) {
+			    return abort(404);
+			}
+
+			return $model;
+		};
+	}
+
 
 }
