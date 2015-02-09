@@ -1,7 +1,7 @@
 {
-	"name": "laravel/laravel",
-	"description": "The Laravel Framework.",
-	"keywords": ["framework", "laravel"],
+	"name": "Nawhas.com",
+	"description": "A repository of nawha writeups.",
+	"keywords": ["islam", "muharram", "write-ups"],
 	"license": "MIT",
 	"type": "project",
 	"require": {
